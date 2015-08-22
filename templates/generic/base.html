@@ -1,0 +1,31 @@
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content=""/>
+  <meta name="author" content="Alexandre Hamelin &lt;alex@synlabs.co&gt;"/>
+  <meta name="copyright" content="Copyright (c) 2015, Synlabs Consulting Inc."/>
+  <title>Untitled page</title>
+  <link rel="stylesheet" href="${static('css/templates/foundation.css')}"/>
+  <script src="${static('js/modernizr.js')}"></script>
+</head>
+
+<body>
+
+
+  <script src="${static('js/templates/jquery.js')}"></script>
+  <script src="${static('js/templates/foundation.js')}"></script>
+  <script>
+    $(document).foundation();
+
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+  </script>
+</body>
+
+</html>
+<!--! vim:set ts=2 sw=2 et: -->

@@ -1,0 +1,54 @@
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content=""/>
+  <meta name="author" content="Alexandre Hamelin &lt;alexandre.hamelin gmail.com&gt;"/>
+  <meta name="copyright" content="Copyright (c) 2015, The Web Site Authors"/>
+  <title>Placeholder Image Generator</title>
+  <link rel="stylesheet" href="${static('css/foundation.min.css')}"/>
+  <link rel="stylesheet" href="${static('css/site.css')}"/>
+  <script src="${static('js/vendor/modernizr.js')}"></script>
+</head>
+
+<div py:def="example(wxh)" class="row" style="margin: 12px 0">
+  <div class="large-6 columns">
+    <tt>${request.url_root}${wxh}</tt>
+  </div>
+  <div class="large-6 columns">
+    <a href="/${wxh}"><img src="/${wxh}"/></a>
+  </div>
+</div>
+
+<body>
+  <div class="row">
+    <h1>Placeholder Image Generator</h1>
+  </div>
+  <div class="row">
+    <h4>Examples</h4>
+    ${example('150x20')}
+    ${example('50x80')}
+    ${example('400x200/f00/00f?text=[img]')}
+    ${example('40x40.jpg?text=jpg')}
+    ${example('40x40.png?text=png')}
+    ${example('40x40.gif?text=gif')}
+    ${example('100x40/fff.jpg?text=white-bg')}
+    ${example('40x40/000/0f0.jpg?text=green')}
+  </div>
+
+  <script src="${static('js/vendor/jquery.js')}"></script>
+  <script src="${static('js/foundation.min.js')}"></script>
+  <script>
+    $(document).foundation();
+
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+  </script>
+</body>
+
+</html>
+<!--! vim:set ts=2 sw=2 et: -->
